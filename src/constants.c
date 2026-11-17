@@ -544,6 +544,20 @@ int PyXmlSec_ConstantsModule_Init(PyObject* package) {
     PYXMLSEC_ADD_TRANSFORM_CONSTANT(TransformRsaSha256, "RSA_SHA256");
     PYXMLSEC_ADD_TRANSFORM_CONSTANT(TransformRsaSha384, "RSA_SHA384");
     PYXMLSEC_ADD_TRANSFORM_CONSTANT(TransformRsaSha512, "RSA_SHA512");
+
+#if defined(xmlSecTransformRsaPssSha224Id) && !defined(XMLSEC_NO_RSA) && !defined(XMLSEC_NO_SHA224)
+    PYXMLSEC_ADD_TRANSFORM_CONSTANT(TransformRsaPssSha224, "RSA_PSS_SHA224");
+#endif
+#if defined(xmlSecTransformRsaPssSha256Id) && !defined(XMLSEC_NO_RSA) && !defined(XMLSEC_NO_SHA256)
+    PYXMLSEC_ADD_TRANSFORM_CONSTANT(TransformRsaPssSha256, "RSA_PSS_SHA256");
+#endif
+#if defined(xmlSecTransformRsaPssSha384Id) && !defined(XMLSEC_NO_RSA) && !defined(XMLSEC_NO_SHA384)
+    PYXMLSEC_ADD_TRANSFORM_CONSTANT(TransformRsaPssSha384, "RSA_PSS_SHA384");
+#endif
+#if defined(xmlSecTransformRsaPssSha512Id) && !defined(XMLSEC_NO_RSA) && !defined(XMLSEC_NO_SHA512)
+    PYXMLSEC_ADD_TRANSFORM_CONSTANT(TransformRsaPssSha512, "RSA_PSS_SHA512");
+#endif
+
     PYXMLSEC_ADD_TRANSFORM_CONSTANT(TransformRsaPkcs1, "RSA_PKCS1");
     PYXMLSEC_ADD_TRANSFORM_CONSTANT(TransformRsaOaep, "RSA_OAEP");
 

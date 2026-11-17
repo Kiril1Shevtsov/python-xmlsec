@@ -481,6 +481,22 @@ Transforms
 
    The RSA-SHA512 signature transform klass.
 
+.. data:: xmlsec.constants.TransformRsaPssSha224
+          xmlsec.constants.TransformRsaPssSha256
+          xmlsec.constants.TransformRsaPssSha384
+          xmlsec.constants.TransformRsaPssSha512
+
+   RSA-PSS signature transforms with SHA-224, SHA-256, SHA-384 and SHA-512,
+   respectively (also available as ``xmlsec.Transform.RSA_PSS_SHA224``,
+   ``RSA_PSS_SHA256``, ``RSA_PSS_SHA384`` and ``RSA_PSS_SHA512``).
+   These use the fixed parameters from `RFC 9231, section 2.3.10
+   <https://www.rfc-editor.org/rfc/rfc9231.html#section-2.3.10>`_:
+   MGF1 with the same hash as the signature and a salt length equal to the
+   digest length. They do not expose configurable RSA-PSS parameters.
+
+   Available with xmlsec1 1.3.0 or newer when the selected crypto backend
+   provides the corresponding transform and RSA and the hash are enabled.
+
 .. data:: xmlsec.constants.TransformRsaPkcs1
 
    The RSA PKCS1 key transport transform klass.
